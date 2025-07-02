@@ -1,20 +1,18 @@
 extends CharacterBody2D
 
 func _ready(): 
-	var score: int = 200
+	pass
 	
-	var money: float = 63.5
 	
-	var is_player_alive: bool = true
+func _process(delta):
+	var move_speed: float = 100
 	
-	print (score + 200 * score + 100 * 30 + score + 30000 * score * 1,000,000)
-	print (first_name)
-	print (damage)
-	var username: String = "Bob"
 	
-	print (username)
-	print (money + 100,000)
 
-var first_name: String = "Bojan"
+	var move_vector: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	print(move_vector)
 
-var damage: float = 7.5
+	velocity = move_vector * move_speed	
+	move_and_slide()
+	
